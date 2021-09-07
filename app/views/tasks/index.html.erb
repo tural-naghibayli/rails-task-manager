@@ -1,0 +1,12 @@
+<h1>This is home page of tasks</h1>
+
+<ol>
+  <h4>List of tasks</h4>
+  <% @tasks.each do |task| %>
+    <li><%= link_to task.title, task_path(task) %> : - done?:  <span> <%= task.completed.to_s.upcase %> </span></li>
+  <% end %>
+</ol>
+
+<p>Plan your tasks for your day</p>
+
+<%= link_to "NEW TASK", new_task_path %>
